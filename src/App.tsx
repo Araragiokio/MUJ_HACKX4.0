@@ -150,6 +150,24 @@ export default function App() {
     setTransactions((prev) => [newTxn, ...prev]);
   };
 
+  const handleAddLiability = (newLiability: Liability) => {
+    setLiabilities((prev) => {
+      const updated = [newLiability, ...prev];
+      return updated
+        .sort((a, b) => b.interestRate - a.interestRate)
+        .map((item, idx) => ({ ...item, avalancheRank: idx + 1 }));
+    });
+  };
+
+  const handleRemoveLiability = (id: string) => {
+    setLiabilities((prev) => {
+      const updated = prev.filter((l) => l.id !== id);
+      return updated
+        .sort((a, b) => b.interestRate - a.interestRate)
+        .map((item, idx) => ({ ...item, avalancheRank: idx + 1 }));
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F9FA] text-[#0F172A] flex flex-col antialiased">
       {/* Persistent Left Sidebar */}
@@ -204,7 +222,11 @@ export default function App() {
           )}
 
           {currentScreen === 'liabilities' && (
-            <LiabilitiesView liabilities={liabilities} />
+            <LiabilitiesView
+              liabilities={liabilities}
+              onAddLiability={handleAddLiability}
+              onRemoveLiability={handleRemoveLiability}
+            />
           )}
 
           {currentScreen === 'insights' && (
