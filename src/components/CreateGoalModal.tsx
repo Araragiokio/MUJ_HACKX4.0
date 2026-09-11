@@ -96,7 +96,7 @@ export const CreateGoalModal: React.FC<CreateGoalModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title="Create New Financial Goal"
-      subtitle="Define your target and let FinSight automate pacing"
+      subtitle="Define your target and let Freenance automate pacing"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Goal Name */}

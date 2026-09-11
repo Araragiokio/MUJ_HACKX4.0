@@ -24,7 +24,7 @@ export const UnusedSubscriptionModal: React.FC<UnusedSubscriptionModalProps> = (
       isOpen={isOpen}
       onClose={onClose}
       title="Recurring Subscription Review"
-      subtitle="FinSight Usage Intelligence Audit"
+      subtitle="Freenance Usage Intelligence Audit"
     >
       <div className="space-y-5">
         {/* Service Header */}

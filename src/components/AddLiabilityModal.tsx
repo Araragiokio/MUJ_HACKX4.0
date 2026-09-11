@@ -37,20 +37,20 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
     priorityInput !== 'AUTO'
       ? priorityInput
       : aprValue >= 20
-      ? 'HIGH'
-      : aprValue >= 10
-      ? 'MEDIUM'
-      : 'LOW';
+        ? 'HIGH'
+        : aprValue >= 10
+          ? 'MEDIUM'
+          : 'LOW';
 
   // Calculate estimated monthly interest
   const estimatedMonthlyInterest = Math.round((numOutstanding * (aprValue / 100)) / 12);
 
   // Auto calculate tenure if not provided
-  const estimatedTenure = numTenure > 0 
-    ? numTenure 
-    : numEmi > 0 
-    ? Math.max(1, Math.ceil(numOutstanding / numEmi)) 
-    : 12;
+  const estimatedTenure = numTenure > 0
+    ? numTenure
+    : numEmi > 0
+      ? Math.max(1, Math.ceil(numOutstanding / numEmi))
+      : 12;
 
   const isValid =
     name.trim().length > 0 &&
@@ -190,22 +190,20 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
               <button
                 type="button"
                 onClick={() => setRateType('apr')}
-                className={`px-2 py-0.5 rounded-md transition-colors ${
-                  rateType === 'apr'
+                className={`px-2 py-0.5 rounded-md transition-colors ${rateType === 'apr'
                     ? 'bg-white text-slate-900 shadow-2xs font-bold'
                     : 'text-slate-500 hover:text-slate-800'
-                }`}
+                  }`}
               >
                 % APR (p.a.)
               </button>
               <button
                 type="button"
                 onClick={() => setRateType('monthly')}
-                className={`px-2 py-0.5 rounded-md transition-colors ${
-                  rateType === 'monthly'
+                className={`px-2 py-0.5 rounded-md transition-colors ${rateType === 'monthly'
                     ? 'bg-white text-slate-900 shadow-2xs font-bold'
                     : 'text-slate-500 hover:text-slate-800'
-                }`}
+                  }`}
               >
                 % per mo
               </button>
@@ -215,8 +213,8 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
             <Percent className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             <input
               type="number"
-              step="0.1"
-              min="0.1"
+              step="any"
+              min="0"
               required
               placeholder={rateType === 'apr' ? 'e.g. 38.0 for 38% APR' : 'e.g. 3.2 for 3.2%/mo'}
               value={rateInput}
@@ -239,8 +237,8 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
             </label>
             <input
               type="number"
-              min="100"
-              step="500"
+              step="any"
+              min="0"
               required
               placeholder="e.g. 42000"
               value={outstandingAmount}
@@ -255,8 +253,8 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
             </label>
             <input
               type="number"
-              min="100"
-              step="500"
+              step="any"
+              min="0"
               required
               placeholder="e.g. 5000"
               value={monthlyEmi}
@@ -271,7 +269,8 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
             </label>
             <input
               type="number"
-              min="1"
+              step="1"
+              min="0"
               placeholder={`e.g. ${estimatedTenure}`}
               value={tenureMonths}
               onChange={(e) => setTenureMonths(e.target.value)}
@@ -311,11 +310,10 @@ export const AddLiabilityModal: React.FC<AddLiabilityModalProps> = ({
           <button
             type="submit"
             disabled={!isValid}
-            className={`px-4 py-2.5 rounded-xl text-xs font-semibold text-white transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs ${
-              isValid
+            className={`px-4 py-2.5 rounded-xl text-xs font-semibold text-white transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs ${isValid
                 ? 'bg-teal-700 hover:bg-teal-800'
                 : 'bg-slate-300 cursor-not-allowed opacity-70'
-            }`}
+              }`}
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Add Liability</span>

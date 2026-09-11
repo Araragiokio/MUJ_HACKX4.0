@@ -90,7 +90,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-lg font-bold tracking-tight text-slate-900">FinSight</span>
+                  <span className="text-lg font-bold tracking-tight text-slate-900">Freenance</span>
                   <span className="px-1.5 py-0.5 text-[9px] font-bold tracking-wider uppercase bg-teal-50 text-teal-700 rounded border border-teal-200/60">
                     MVP
                   </span>

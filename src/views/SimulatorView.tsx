@@ -188,7 +188,7 @@ export const SimulatorView: React.FC = () => {
             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200">
               Deterministic Decision Engine
             </span>
-            <span className="text-xs text-slate-400 font-medium">FinSight Hero Feature</span>
+            <span className="text-xs text-slate-400 font-medium">Freenance Hero Feature</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-950 tracking-tight">
             What happens if life changes?
@@ -883,7 +883,7 @@ export const SimulatorView: React.FC = () => {
 
         <div className="pt-2 border-t border-slate-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-slate-500">
           <span>Simulation verified against Aarav Mehta's real banking ledger</span>
-          <span className="font-semibold text-slate-700">Instant FinSight Predictive Modeling</span>
+          <span className="font-semibold text-slate-700">Instant Freenance Predictive Modeling</span>
         </div>
       </div>
     </div>

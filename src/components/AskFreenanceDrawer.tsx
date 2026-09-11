@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 
-import { askFinSightAI } from '../utils/geminiClient';
+import { askFreenanceAI } from '../utils/geminiClient';
 import { Modal } from './Modal';
 import { Sparkles, Send, Bot, User, ArrowRight, ShieldCheck } from 'lucide-react';
 import { UserProfile } from '../types';
 import { formatINR } from '../utils/formatters';
 
-interface AskFinSightDrawerProps {
+interface AskFreenanceDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   user: UserProfile;
@@ -20,7 +20,7 @@ interface Message {
   timestamp: string;
 }
 
-export const AskFinSightDrawer: React.FC<AskFinSightDrawerProps> = ({
+export const AskFreenanceDrawer: React.FC<AskFreenanceDrawerProps> = ({
   isOpen,
   onClose,
   user,
@@ -42,7 +42,7 @@ export const AskFinSightDrawer: React.FC<AskFinSightDrawerProps> = ({
     'How can I reach my ₹2,00,000 Emergency Fund faster?',
   ];
 
-  const financialContext = `You are FinSight AI, a grounded financial reasoning assistant embedded in a personal finance dashboard.
+  const financialContext = `You are Freenance AI, a grounded financial reasoning assistant embedded in a personal finance dashboard.
 Answer using ONLY this user's real financial data below — do not invent numbers that aren't given or implied here.
 
 User profile:
@@ -85,7 +85,7 @@ Formatting rules:
     setIsTyping(true);
 
     try {
-      const answer = await askFinSightAI(question, financialContext);
+      const answer = await askFreenanceAI(question, financialContext);
       setMessages((prev) => [
         ...prev,
         {
@@ -112,7 +112,7 @@ Formatting rules:
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title="Ask FinSight AI"
+      title="Ask Freenance AI"
       subtitle="Grounded financial reasoning engine for Aarav's finances"
       maxWidth="max-w-2xl"
     >
@@ -166,7 +166,7 @@ Formatting rules:
               <div className="w-7 h-7 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center shrink-0">
                 <Sparkles className="w-3.5 h-3.5 animate-pulse" />
               </div>
-              <span>FinSight is reasoning through your ledger...</span>
+              <span>Freenance is reasoning through your ledger...</span>
             </div>
           )}
         </div>

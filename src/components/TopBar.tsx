@@ -115,14 +115,14 @@ export const TopBar: React.FC<TopBarProps> = ({
           <RefreshCw className="w-4 h-4" />
         </button>
 
-        {/* Ask FinSight AI button */}
+        {/* Ask Freenance AI button */}
         <button
-          id="btn-ask-finsight"
+          id="btn-ask-freenance"
           onClick={onOpenAskAi}
           className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-700 to-teal-700 text-white text-xs font-semibold shadow-sm shadow-indigo-600/20 hover:shadow-md hover:brightness-105 transition-all"
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-          <span>Ask FinSight AI</span>
+          <span>Ask Freenance AI</span>
         </button>
       </div>
     </header>

@@ -65,7 +65,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <span className="text-xl select-none" aria-hidden="true">👋</span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
-            Most budgeting apps tell you what happened. FinSight helps you understand what happens next.
+            Most budgeting apps tell you what happened. Freenance helps you understand what happens next.
           </p>
         </div>
 
@@ -214,7 +214,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                     Your biggest opportunity
                   </span>
-                  <span className="text-xs text-indigo-300/80 font-medium">FinSight Deterministic Reasoning</span>
+                  <span className="text-xs text-indigo-300/80 font-medium">Freenance Deterministic Reasoning</span>
                 </div>
 
                 <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-snug">

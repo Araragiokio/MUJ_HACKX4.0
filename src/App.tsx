@@ -20,7 +20,7 @@ import { ExplainModal } from './components/ExplainModal';
 import { UnusedSubscriptionModal } from './components/UnusedSubscriptionModal';
 import { CreateGoalModal } from './components/CreateGoalModal';
 import { TransactionDetailModal } from './components/TransactionDetailModal';
-import { AskFinSightDrawer } from './components/AskFinSightDrawer';
+import { AskFreenanceDrawer } from './components/AskFreenanceDrawer';
 
 // Views
 import { DashboardView } from './views/DashboardView';
@@ -46,22 +46,22 @@ export default function App() {
 
   // Load from localStorage or fallback to defaults
   const [user, setUser] = useState<UserProfile>(() => {
-    const saved = localStorage.getItem('finsight_user');
+    const saved = localStorage.getItem('freenance_user');
     return saved ? JSON.parse(saved) : INITIAL_USER;
   });
 
   const [subscriptions, setSubscriptions] = useState<Subscription[]>(() => {
-    const saved = localStorage.getItem('finsight_subs');
+    const saved = localStorage.getItem('freenance_subs');
     return saved ? JSON.parse(saved) : INITIAL_SUBSCRIPTIONS;
   });
 
   const [goals, setGoals] = useState<FinancialGoal[]>(() => {
-    const saved = localStorage.getItem('finsight_goals');
+    const saved = localStorage.getItem('freenance_goals');
     return saved ? JSON.parse(saved) : INITIAL_GOALS;
   });
 
   const [liabilities, setLiabilities] = useState<Liability[]>(() => {
-    const saved = localStorage.getItem('finsight_liabilities');
+    const saved = localStorage.getItem('freenance_liabilities');
     return saved ? JSON.parse(saved) : INITIAL_LIABILITIES;
   });
 
@@ -77,27 +77,27 @@ export default function App() {
 
   // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem('finsight_user', JSON.stringify(user));
+    localStorage.setItem('freenance_user', JSON.stringify(user));
   }, [user]);
 
   useEffect(() => {
-    localStorage.setItem('finsight_subs', JSON.stringify(subscriptions));
+    localStorage.setItem('freenance_subs', JSON.stringify(subscriptions));
   }, [subscriptions]);
 
   useEffect(() => {
-    localStorage.setItem('finsight_goals', JSON.stringify(goals));
+    localStorage.setItem('freenance_goals', JSON.stringify(goals));
   }, [goals]);
 
   useEffect(() => {
-    localStorage.setItem('finsight_liabilities', JSON.stringify(liabilities));
+    localStorage.setItem('freenance_liabilities', JSON.stringify(liabilities));
   }, [liabilities]);
 
   // Handlers
   const handleResetDemoData = () => {
-    localStorage.removeItem('finsight_user');
-    localStorage.removeItem('finsight_subs');
-    localStorage.removeItem('finsight_goals');
-    localStorage.removeItem('finsight_liabilities');
+    localStorage.removeItem('freenance_user');
+    localStorage.removeItem('freenance_subs');
+    localStorage.removeItem('freenance_goals');
+    localStorage.removeItem('freenance_liabilities');
     setUser(INITIAL_USER);
     setSubscriptions(INITIAL_SUBSCRIPTIONS);
     setGoals(INITIAL_GOALS);
@@ -335,7 +335,7 @@ export default function App() {
         onClose={() => setSelectedTxnToReview(null)}
       />
 
-      <AskFinSightDrawer
+      <AskFreenanceDrawer
         isOpen={isAskAiOpen}
         onClose={() => setIsAskAiOpen(false)}
         user={user}

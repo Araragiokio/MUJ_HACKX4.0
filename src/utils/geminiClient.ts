@@ -1,7 +1,7 @@
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const MODEL = "gemini-flash-lite-latest"; // verify exact model string in Google AI Studio docs
 
-export async function askFinSightAI(prompt: string, context: string): Promise<string> {
+export async function askFreenanceAI(prompt: string, context: string): Promise<string> {
     const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`,
         {

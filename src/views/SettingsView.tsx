@@ -120,7 +120,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
         </div>
       </div>
 
-      {/* FinSight Product Vision Notice */}
+      {/* Freenance Product Vision Notice */}
       <div className="p-6 rounded-2xl bg-slate-950 text-white space-y-2 border border-slate-800 shadow-md">
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-teal-400" />
@@ -129,7 +129,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           </span>
         </div>
         <p className="text-sm font-semibold text-white">
-          "Most budgeting apps tell you what happened. FinSight tells you what happens next."
+          "Most budgeting apps tell you what happened. Freenance tells you what happens next."
         </p>
         <p className="text-xs text-slate-400 leading-relaxed">
           Demo data for illustration only. Not financial advice. Designed specifically for Indian working professionals navigating salary credits, EMIs, SIPs, and recurring subscriptions.
