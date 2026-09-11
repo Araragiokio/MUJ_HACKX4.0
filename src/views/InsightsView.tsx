@@ -132,12 +132,6 @@ export const InsightsView: React.FC<InsightsViewProps> = ({
           {insights.map((insight, idx) => {
             // Precise Structured Data for each insight
             const structuredData = {
-              'insight-1': {
-                problem: 'Unused subscription detected across 4 consecutive billing cycles.',
-                impact: '₹649 / month direct cash drain • Potential annual impact: ₹7,788',
-                why: 'Netflix charged ₹649 on 07 Jun, 07 Jul, 07 Aug, 07 Sep with 0 streaming hours logged in the last 45 days.',
-                actionLabel: 'Review subscription',
-              },
               'insight-2': {
                 problem: 'Discretionary food delivery spending surged 31% above your 90-day baseline.',
                 impact: '₹2,500 / month excess outgo • Annualized recovery: ₹30,000',

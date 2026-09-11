@@ -203,20 +203,6 @@ export const INITIAL_LIABILITIES: Liability[] = [
 
 export const INITIAL_INSIGHTS: ActionableInsight[] = [
   {
-    id: 'insight-1',
-    title: 'Cancel unused subscription',
-    category: 'Subscription',
-    potentialMonthlySaving: 649,
-    reason: 'Netflix has been charged for 4 consecutive months while your demo usage is low (0 streaming hours in 45 days).',
-    ctaText: 'Review Subscription',
-    targetScreen: 'dashboard',
-    impactLabel: '+₹649/mo direct cash saving',
-    breakdown: [
-      { label: 'Netflix Premium monthly charge', amount: 649 },
-      { label: 'Annualized cumulative waste', amount: 7788 },
-    ],
-  },
-  {
     id: 'insight-2',
     title: 'Reduce discretionary food spending',
     category: 'Food',
