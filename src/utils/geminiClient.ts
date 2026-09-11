@@ -1,3 +1,10 @@
+export interface FinancialState {
+    liquidBalance: number;
+    alreadyAllocated: number;
+    remainingBalance: number;
+    allocations: Array<{ purpose: string; amount: number }>;
+}
+
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const MODEL = "gemini-flash-lite-latest"; // verify exact model string in Google AI Studio docs
 
@@ -24,4 +31,4 @@ export async function askFreenanceAI(prompt: string, context: string): Promise<s
 
     const data = await res.json();
     return data.candidates?.[0]?.content?.parts?.[0]?.text ?? "I couldn't generate a response.";
-}
+}
